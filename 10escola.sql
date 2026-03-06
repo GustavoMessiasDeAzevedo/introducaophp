@@ -1,4 +1,4 @@
-CREATE TABLE escola_gustavo
+CREATE DATABASE escola_gustavo;
 
 USE escola_gustavo;
 
