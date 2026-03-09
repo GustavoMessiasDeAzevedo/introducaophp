@@ -1,0 +1,77 @@
+:root{
+    --vermelho-escarlate: #ED2100;
+    --vermelho-sangue: #4A0000;
+    --branco: #FFFFFF;
+    --cinza-claro: #F2F2F2;
+    --grafite: #333333;
+}
+
+body{
+    background: linear-gradient(135deg,#ED2100, #4A0000);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+@keyframes gradientAnimation{
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%}
+}
+
+.card{
+    background: rgba(255,255,255,0.95) ;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3 ease, box-shadow 0.3 ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    min-height: 320px;             
+    color: #0f172a;
+}
+.card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+    
+}
+
+.estiloHeader{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    background: #FFFFFF;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin-bottom: 50px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+}
+
+.nome, .cidade{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.id, .uf{
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
