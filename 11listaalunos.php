@@ -45,9 +45,7 @@ $resultado = $conexao->query($sql);
                     <p class="nome"><?php echo htmlspecialchars($alunos['nome'])?></p>
                     <p class="cidade"><?php echo htmlspecialchars($alunos['cidade']) ?></p>
                 </div>
-                    
             </div><?php endforeach; ?>
-                
         </div>
     </main>
 </body>
