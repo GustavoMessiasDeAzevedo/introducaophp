@@ -1,5 +1,5 @@
 <?php
-$salarioBruto = 8000.00;
+$salarioBruto = 1500.00;
 $sobra = $salarioBruto;
 $valorINSS = 0;
 $i = 0;
