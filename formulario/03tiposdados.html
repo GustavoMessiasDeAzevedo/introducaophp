@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Livro</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        input[type="email"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        .inline-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .inline-group label {
+            display: inline;
+            font-weight: normal;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Cadastro de Novo Livro</h1>
+    
+    <form action="03tiposdados.php" method="POST">
+        
+        <div class="form-group">
+            <label for="titulo">Título do Livro:</label>
+            <input type="text" id="titulo" name="titulo" placeholder="Ex: O Senhor dos Anéis" required>
+        </div>
+
+        <div class="form-group">
+            <label for="autor">Autor(a):</label>
+            <input type="text" id="autor" name="autor" placeholder="Ex: J.R.R. Tolkien" required>
+        </div>
+
+        <div class="form-group">
+            <label for="paginas">Número de Páginas:</label>
+            <input type="number" id="paginas" name="paginas" min="1" placeholder="Ex: 320">
+        </div>
+
+        <div class="form-group">
+            <label for="lancamento">Data de Lançamento:</label>
+            <input type="date" id="lancamento" name="lancamento">
+        </div>
+
+        <div class="form-group">
+            <label for="categoria">Gênero Literário:</label>
+            <select id="categoria" name="categoria">
+                <option value="">Selecione um gênero</option>
+                <option value="fantasia">Fantasia</option>
+                <option value="ficcao">Ficção Científica</option>
+                <option value="romance">Romance</option>
+                <option value="terror">Terror / Suspense</option>
+                <option value="biografia">Biografia</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Formato do Livro:</label>
+            <div class="inline-group">
+                <input type="radio" id="fisico" name="formato" value="fisico" checked>
+                <label for="fisico">Físico</label>
+                
+                <input type="radio" id="ebook" name="formato" value="ebook">
+                <label for="ebook">E-book</label>
+                
+                <input type="radio" id="audiobook" name="formato" value="audiobook">
+                <label for="audiobook">Audiobook</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Extras inclusos:</label>
+            <div class="inline-group">
+                <input type="checkbox" id="marcador" name="extras" value="marcador">
+                <label for="marcador">Marcador de Página</label>
+                
+                <input type="checkbox" id="autografo" name="extras" value="autografo">
+                <label for="autografo">Autógrafo</label>
+                
+                <input type="checkbox" id="ilustracoes" name="extras" value="ilustracoes">
+                <label for="ilustracoes">Ilustrações Especiais</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="capa">Upload da Capa (Imagem):</label>
+            <input type="file" id="capa" name="capa" accept="image/*">
+        </div>
+
+        <div class="form-group">
+            <label for="link_compra">Link para Compra:</label>
+            <input type="url" id="link_compra" name="link_compra" placeholder="https://exemplo.com">
+        </div>
+
+        <div class="form-group">
+            <label for="cor_capa">Cor predominante da capa (para destaque):</label>
+            <input type="color" id="cor_capa" name="cor_capa" value="#3498db">
+        </div>
+
+        <div class="form-group">
+            <label for="sinopse">Sinopse / Resumo:</label>
+            <textarea id="sinopse" name="sinopse" rows="4" placeholder="Escreva um breve resumo do livro..."></textarea>
+        </div>
+
+        <button type="submit">Cadastrar Livro</button>
+    </form>
+</div>
+
+</body>
+</html>
