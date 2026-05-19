@@ -10,7 +10,10 @@
     //     $contas = [];
 
     // Inicia a sessão
+
     session_start();
+
+
 
     // Verifica se já existe o array na sessão
     if (!isset($_SESSION["contas"])) {
@@ -45,14 +48,7 @@
             exit;
         }
 
-        // $contas[] = $contaObj;
-        // $_SESSION[$contas][] = $contaObj;
-
-        // echo "<h3>Extrato da Conta</h3>";
-        // foreach ($_SESSION["contas"] as $v_conta) {
-        //     $v_conta->imprimeExtrato();
-        //     echo "<br>";
-        // }
+        setcookie("ultimaConta", count($_SESSION['contas']) - 1 , time() + 3600);
 
         echo '<br>
                <h2>Conta Cadastrada com Sucesso!!!</h2> 

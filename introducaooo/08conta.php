@@ -21,8 +21,8 @@
       {
          echo 'Conta: ' . $this->tipoDeConta . ' Agência: ' . $this->agencia . ' Conta: ' . $this->conta . ' Saldo: ' . $this->calculaSaldo();
 
-         foreach( $this->movimentacao as $itemExtrato  ){
-            echo '<br>' . $itemExtrato-> imprimeItem() ;
+         foreach ($this->movimentacao as $itemExtrato) {
+            echo '<br>' . $itemExtrato->imprimeItem();
          }
       }
 
@@ -46,6 +46,21 @@
       public function incluiMovimentacao(ItemExtrato $item)
       {
          $this->movimentacao[] = $item;
+      }
+
+      public function getAgencia()
+      {
+         return $this->agencia;
+      }
+
+      public function getTipoDeConta()
+      {
+         return $this->tipoDeConta;
+      }
+
+      public function getConta()
+      {
+         return $this->conta;
       }
 
       abstract public function calculaSaldo();
