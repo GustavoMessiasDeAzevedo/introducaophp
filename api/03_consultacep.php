@@ -1,10 +1,7 @@
 <?php
 $cepForm = $_POST['cep'];
 
-if (!isset($_POST['cep'])) {
-    return "CEP não preenchido";
-    exit();
-}
+
 if (preg_match('/[ .-]/', $cepForm)) {
     echo "Contém ponto ou espaço inválido.";
     exit();
