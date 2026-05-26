@@ -1,5 +1,15 @@
 <?php
 $cepForm = $_POST['cep'];
+
+if (isset($_POST['cep'])) {
+    return "CEP não preenchido";
+    exit();
+}
+if (preg_match('/[ .]/', $_POST['cep'])) {
+    echo "Contém ponto ou espaço inválido.";
+    exit();
+}
+
 $url = "viacep.com.br/ws/$cepForm/json/";
 
 $cUrl = curl_init($url);
