@@ -2,8 +2,8 @@
 $cepForm = $_POST['cep'];
 
 
-if (preg_match('/[ .-]/', $cepForm)) {
-    echo "Contém ponto ou espaço inválido.";
+if (!preg_match('/^\d{5}-?\d{3}$/', $cepForm)) {
+    echo "CEP inválido.";
     exit();
 }
 
