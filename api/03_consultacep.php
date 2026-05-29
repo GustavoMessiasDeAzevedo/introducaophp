@@ -1,6 +1,10 @@
 <?php
 $cepForm = $_POST['cep'];
 
+if (!preg_match('/^[0-9-]+$/', $cepForm)) {
+    echo "Apenas números são permitidos.";
+    exit();
+}
 
 if (!preg_match('/^\d{5}-?\d{3}$/', $cepForm)) {
     echo "CEP inválido.";
